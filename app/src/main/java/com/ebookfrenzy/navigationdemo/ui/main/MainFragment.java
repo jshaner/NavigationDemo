@@ -2,6 +2,7 @@ package com.ebookfrenzy.navigationdemo.ui.main;
 
 import android.widget.Button;
 import android.widget.EditText;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.lifecycle.ViewModelProviders;
 import android.os.Bundle;
 import androidx.annotation.NonNull;
@@ -31,7 +32,7 @@ public class MainFragment extends Fragment {
   @Override
   public void onActivityCreated(@Nullable Bundle savedInstanceState) {
     super.onActivityCreated(savedInstanceState);
-    mViewModel = ViewModelProviders.of(this).get(MainViewModel.class);
+    mViewModel = new ViewModelProvider(this).get(MainViewModel.class);
 
     Button button = getView().findViewById(R.id.button);
 
